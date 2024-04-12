@@ -3,6 +3,8 @@ import { useEdisonContext } from "@/context/EdisonContext";
 function Footer() {
   const { openCart, totalSumm } = useEdisonContext();
 
+  const formatPrice = Intl.NumberFormat("en-US");
+
   return (
     <footer className="footer" id="footer">
       <div className="container">
@@ -10,8 +12,10 @@ function Footer() {
           <div className="totalPrice">
             <h1>Общая сумма</h1>
             <p style={{ display: "flex", gap: 5 }}>
-              {totalSumm}
-              <span>сум</span>
+              {formatPrice
+                .format(Number.parseInt(totalSumm + ""))
+                .replace(",", " ")}{" "}
+              сум
             </p>
           </div>
           <button className="order-btn" onClick={openCart}>
