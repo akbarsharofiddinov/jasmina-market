@@ -1,0 +1,153 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap");
+
+// Variables
+@import "./variables";
+
+// Components
+@import "./components/header";
+@import "./components/banner";
+@import "./components/searchInput";
+@import "./components/categories";
+@import "./components/products";
+@import "./components/footer";
+@import "./components/cart";
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  outline: none;
+  box-sizing: border-box;
+  list-style: none;
+  text-decoration: none;
+  user-select: none;
+}
+
+/* font-family: "Lato", sans-serif; */
+
+html,
+body {
+  font-family: "Lato", sans-serif;
+  color: #333;
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #fff;
+}
+
+.container {
+  max-width: 380px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 10px 0;
+}
+
+main {
+  display: block;
+}
+
+main.hide {
+  display: none;
+}
+
+.modal {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 10;
+
+  &.active {
+    display: flex;
+  }
+
+  .feedback-inner {
+    background-color: #fff;
+    max-width: 350px;
+    height: 600px;
+    width: 100%;
+    padding: 12px 24px;
+    border-radius: 8px;
+
+    position: relative;
+  }
+
+  .feedback-inner .title {
+    text-align: center;
+    font-size: 18px;
+  }
+
+  .feedback-inner form {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    height: 100%;
+    margin-top: 24px;
+  }
+
+  .messageBox {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .messageBox label {
+    font-size: 16px;
+    font-weight: 600;
+  }
+
+  .messageBox textarea {
+    resize: none;
+    border-radius: 4px;
+    width: 100%;
+    height: 200px;
+    border: 1px solid #eee;
+    box-shadow: 3px 5px 10px rgba(0, 0, 0, 0.1);
+    padding: 7px;
+    font-family: "Lato", sans-serif;
+  }
+
+  .ratingBoxes {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .ratingBoxes .rating-box {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+  }
+
+  .rating-box label {
+    font-weight: 600;
+  }
+
+  .fa-solid.fa-star {
+    color: #fbc100;
+  }
+
+  .feedback-inner form button {
+    background-color: #fbc100;
+    color: #000;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 7px;
+    font-size: 15px;
+
+    position: absolute;
+    bottom: 12px;
+    left: 50%;
+    transform: translateX(-50%);
+
+    transition: transform 0.1s ease-out;
+  }
+}
