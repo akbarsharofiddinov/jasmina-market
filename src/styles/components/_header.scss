@@ -6,7 +6,6 @@
   z-index: 20;
   background-color: #fff;
   box-shadow: 1px 5px 10px rgba(0, 0, 0, 0.1);
-  padding: 15px 0;
 
   &.container {
     padding: 10px 0 0 0;
@@ -22,6 +21,7 @@
       align-items: center;
       gap: 10px;
       color: $base-color;
+      padding: 15px;
 
       img {
         width: 65px;
