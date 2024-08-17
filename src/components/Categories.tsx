@@ -1,6 +1,6 @@
 import { Swiper, SwiperSlide } from "swiper/react";
 import { IoIosClose } from "react-icons/io";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useMyParams } from "@/hooks/useMyParams";
 import { useEffect, useState } from "react";
 import axios from "axios";
@@ -27,6 +27,7 @@ export default function Categories() {
   }, []);
 
   const navigate = useNavigate();
+
   return (
     <div className="container">
       <Swiper
@@ -35,11 +36,22 @@ export default function Categories() {
         className="categorySwiper"
         spaceBetween={10}
       >
+        <SwiperSlide>
+          <Link
+            to={`/`}
+            className={
+              useLocation().search.length > 0
+                ? "category_item"
+                : "category_item active"
+            }
+          >
+            Все
+          </Link>
+        </SwiperSlide>
         {categories.map((category, index) => (
           <SwiperSlide key={`${category.name}-${index}`}>
             <Link
               to={`?q=${category.id}`}
-              onClick={() => console.log(category.id)}
               className={
                 category.id === queary
                   ? "category_item active"
