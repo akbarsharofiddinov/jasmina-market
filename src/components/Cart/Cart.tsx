@@ -207,6 +207,10 @@ const Cart: React.FC<CartProps> = ({ isOpen }: CartProps) => {
                         "Оформить заказ"
                       )}
                     </button>
+                    <p className="cart-link">
+                      Разработчик
+                      <a href="https://www.dbc24.uz">Dbc24.uz</a>
+                    </p>
                   </div>
                 </div>
               </div>

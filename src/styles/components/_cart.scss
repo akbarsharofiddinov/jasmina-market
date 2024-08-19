@@ -158,6 +158,17 @@
         bottom: 0;
         width: 100%;
 
+        padding-bottom: 20px;
+
+        .cart-link {
+          justify-content: end;
+          gap: 10px;
+          font-size: 15px;
+          a {
+            text-decoration: underline;
+          }
+        }
+
         &.inner {
           display: flex;
           flex-direction: column;
